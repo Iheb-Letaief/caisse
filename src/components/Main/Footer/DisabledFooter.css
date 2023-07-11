@@ -1,0 +1,48 @@
+.footerD {
+    background-color: rgb(176, 174, 174);
+    color: #ffffff;
+    width: 50%;
+    height: 50px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .disabled {
+    background-color: grey;
+  }
+  
+  
+  .containerD {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-right: 70px;
+    font-size: larger;
+    font-style: italic;
+  }
+  
+  .labelD {
+    margin-right: 5px;
+  }
+  
+  .valueD{
+    font-weight: bold;
+  }
+
+  .retour-commandeD{
+    display: flex;
+    width: 120px;
+    height: 40px;
+    font-size: 14px;
+    background-color: grey;
+    border-radius: 5px;
+    padding: 3px;
+    text-align: center;
+    align-items: center;
+    flex-direction: column; 
+    margin-top: 7px;
+    font-weight: bold;
+  }
+  

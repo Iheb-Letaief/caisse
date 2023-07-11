@@ -1,0 +1,146 @@
+.player-card1 {
+    position: relative;
+    background-color: #ffffff;
+    border: 3px solid #0b6cff;
+    border-radius: 5px;
+    height: 80px;
+    width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+  
+  .player-edit1 {
+    color: #0b6cff;
+    margin-bottom: 4px;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
+  
+  .player-info1 {
+    text-align: center;
+  }
+  
+  .player-name1 {
+    color: #0b6cff;
+    margin: 0;
+  }
+  
+  .player-price1 {
+    color: #0b6cff;
+    margin: 0;
+  }
+  
+
+
+  .player-card2 {
+    position: relative;
+    background-color: #5cb85c44;
+    border: 3px solid #5cb85c;
+    border-radius: 5px;
+    height: 80px;
+    width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+  
+  .player-edit2 {
+    color: #5cb85c;
+    margin-bottom: 4px;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
+  
+  .player-info2 {
+    text-align: center;
+  }
+  
+  .player-name2 {
+    color: #5cb85c;
+    margin: 0;
+  }
+  
+  .player-price2 {
+    color: #5cb85c;
+    margin: 0;
+  }
+
+
+
+  .player-card3 {
+    position: relative;
+    background-color: #ae00ff40;
+    border: 3px solid #ad00ff;
+    border-radius: 5px;
+    height: 80px;
+    width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+  
+  .player-edit3 {
+    color: #ad00ff;
+    margin-bottom: 4px;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
+  
+  .player-info3 {
+    text-align: center;
+  }
+  
+  .player-name3 {
+    color: #ad00ff;
+    margin: 0;
+  }
+  
+  .player-price3 {
+    color: #ad00ff;
+    margin: 0;
+  }
+  
+  
+
+  .pay-card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #75e475;
+    color: #fff;
+    font-size: 25px;
+    border-radius: 5px;
+    height: 45px;
+    width: 170px;
+  }
+
+  .encaisse-card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #7199ee;
+    color: #fff;
+    font-size: 25px;
+    border-radius: 5px;
+    height: 45px;
+    width: 170px;
+  }

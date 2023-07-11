@@ -1,0 +1,49 @@
+.footer {
+    background-color: #333131;
+    color: #ffffff;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 50%;
+  }
+  
+  .container {
+    display: flex;
+    width: 120px;
+    height: 50px;
+    text-align: center;
+    align-items: center;
+    flex-direction: column; 
+  }
+  
+  .label {
+    margin-right: 5px;
+  }
+  
+  .value {
+    font-weight: bold;
+    padding: 5px ;
+    border-radius: 4px;
+  }
+  
+  .total-remise  {
+    background-color: #5bc0de;
+    
+  }
+  
+  .total-paye  {
+    background-color: #00b876;
+  }
+  
+  .reste-a-payer  {
+    background-color: #d9534f;
+  }
+
+  .total-paye,
+  .total-remise,
+  .reste-a-payer{
+    border-radius: 5px;
+    padding: 5px;
+  }
+  
