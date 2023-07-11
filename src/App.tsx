@@ -1,6 +1,6 @@
 import Sidebar from './components/Sidebar/Sidebar';
 import './App.css';
-import SideWindow, { TableItem } from './components/SideWindow/SideWindow';
+import SideWindow from './components/SideWindow/SideWindow';
 
 
 

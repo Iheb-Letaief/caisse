@@ -3,7 +3,7 @@ import "./SideWindow.css";
 import { AttenteButton, AutreButton, CbButton, CloseButton, EncaisserButton, EspButton, RemiseButton } from "../Buttons/Buttons";
 
 
-export const TableItem = () => {
+const TableItem = () => {
   const [quantity, setQuantity] = useState(0);
 
   const handleIncrement = () => {
@@ -27,8 +27,8 @@ export const TableItem = () => {
           +
         </button>
       </td>
-      <td className="label-cell">libellé</td>
-      <td className="price-cell">prix</td>
+      <td className="label-cell">FOOT HP 1H 10 pers</td>
+      <td className="price-cell">90$</td>
     </tr>
   );
 };
@@ -62,11 +62,16 @@ const SideWindow = () => {
                 </thead>
                 <tbody>
                   <TableItem/>
+                  <TableItem/>
+                  <TableItem/>
+                  <TableItem/>
+                  <TableItem/>
+                  <TableItem/>
                 </tbody>
               </table>
 
-
-              <div className="reste-container">
+            </div>
+            <div className="reste-container">
                 <div>RESTE A PAYER</div>
                 <div>{ /*total*/ }90 $</div>
               </div>
@@ -87,7 +92,7 @@ const SideWindow = () => {
                 <AttenteButton/>
                 <EncaisserButton/>
               </div>
-            </div>
+
           </div>
           
         </div>

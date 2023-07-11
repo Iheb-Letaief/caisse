@@ -144,3 +144,24 @@
     height: 45px;
     width: 170px;
   }
+
+  .foot-card{
+    position: relative;
+    background-color: #B9D9EB;
+    height: 80px;
+    width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #0b6cff;
+    
+  }
+
+  .foot-label{
+    margin: 0;
+  }
+
+  .foot-value{
+    margin: 0;
+  }

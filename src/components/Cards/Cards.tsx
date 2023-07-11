@@ -61,4 +61,13 @@ const EncaisseCard = () => {
   )
 }
 
-export { PlayerCard, PlayerCard2, PlayerCard3, PayCard, EncaisseCard };
+const FootHpCard = () => {
+  return(
+    <div className="foot-card">
+      <h2 className="foot-label">{/*footLabel - footTime*/}HP - 1H</h2>
+      <h2 className="foot-value">{/*nbPers - prix*/} 9 pers - 90$</h2>
+    </div>
+  )
+}
+
+export { PlayerCard, PlayerCard2, PlayerCard3, PayCard, EncaisseCard, FootHpCard };
