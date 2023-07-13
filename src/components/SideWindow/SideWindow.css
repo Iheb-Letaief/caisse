@@ -152,6 +152,52 @@
     margin: 0 10px;
     font-weight: bold;
   }
+
+
+/* Ticket Info */
+
+  .window-ticket-info{
+    color: #fff;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 20px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+  }
+
+  .window-ticket-column{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+  }
+
+  .window-ticket-row {
+    display: flex;
+    align-items: center;
+  }
+
+  .window-ticket-value {
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 5px;
+  }
+
+  .window-pfp {
+    width: 50px;
+    height: 50px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+
+  .window-ticket-name {
+    flex: 1;
+    margin: 0;
+  }
   
   
   

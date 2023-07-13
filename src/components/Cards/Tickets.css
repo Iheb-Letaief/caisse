@@ -1,0 +1,141 @@
+.ticket {
+    display: flex;
+    height: 100px;
+    width: 60%;
+    background-color: #F8F8F8;
+    border: 1px solid #007FFF;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .activity {
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+    background-color: #007FFF;
+  }
+  
+  .activity-icons {
+    margin-right: 10px;
+  }
+  
+  .activity-name {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    margin-right: 10px;
+    font-weight: bold;
+    white-space: nowrap;
+  }
+  
+  .ticket-info {
+    flex: 3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .ticket-row {
+    display: flex;
+    align-items: center;
+  }
+
+  .ticket-column{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+  }
+
+  
+  
+  .ticket-label {
+    margin-right: 5px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .ticket-value {
+    font-weight: bold;
+    color: #007FFF;
+    margin: 0;
+    margin-bottom: 5px;
+  }
+  
+  .montant{
+    color: #007FFF;
+    margin-top: 25px;
+  }
+
+  .participants{
+    color: #FF7F50;
+  }
+  
+  .articles{
+    color: #ad00ff;
+  }
+
+  .line-separator {
+    width: 1px;
+    height: 80%;
+    background-color: #ccc;
+    margin: 0 10px;
+    border-style: 1px dotted #ccc;
+  }
+  
+  .icon.pfp {
+    width: 70px;
+    height: 70px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .ticket-info-name {
+    flex: 1;
+    margin: 0;
+  }
+
+  .ticket-name {
+    color: #0b6cff;
+    margin: 0;
+  }
+  
+  .buttons-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+  }
+
+  .details-button{
+    background-color: #007FFF;
+    transition: background-color 0.2s ease; 
+  }
+
+  .modifier-button{
+    background-color: #ad00ff;
+    transition: background-color 0.2s ease;
+  }
+  
+  .details-button,
+  .modifier-button {
+    margin-right: 10px;
+    margin-top: 10px;
+    padding: 5px 10px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .details-button:hover {
+    background-color: #4c94ff; 
+  }
+
+  .modifier-button:hover{
+    background-color: #c36aec;
+  }
+  

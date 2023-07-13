@@ -24,7 +24,7 @@ const PlayerCard2 = () => {
         <FontAwesomeIcon icon={faPenToSquare} />
       </button>
       <div className="player-info2">
-        <h2 className="player-name2">Player 1</h2>
+        <h2 className="player-name2">Joueur 2</h2>
         <p className="player-price2">9$</p>
       </div>
     </div>
@@ -38,7 +38,7 @@ const PlayerCard3 = () => {
         <FontAwesomeIcon icon={faPenToSquare} />
       </button>
       <div className="player-info3">
-        <h2 className="player-name3">Player 1</h2>
+        <h2 className="player-name3">Joueur 3</h2>
         <p className="player-price3">9$</p>
       </div>
     </div>

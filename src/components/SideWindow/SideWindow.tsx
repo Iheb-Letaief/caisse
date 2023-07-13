@@ -3,6 +3,47 @@ import "./SideWindow.css";
 import { AttenteButton, AutreButton, CbButton, CloseButton, EncaisserButton, EspButton, RemiseButton } from "../Buttons/Buttons";
 
 
+interface TicketProps {
+  id: number;
+  terrain: number;
+  time: string;
+  date: string;
+  name: string;
+  num: string;
+}
+
+const TicketInfo: React.FC<TicketProps> = ({
+  id, 
+  terrain,
+  time, 
+  date,
+  name,
+  num,
+}) => {
+  return(
+    <div className="window-ticket-info">
+      <div className="window-ticket-column">
+        <p className="window-ticket-name">Ticket</p>
+        <p className="window-ticket-value">#{id}</p>
+      </div>
+      <div className="window-ticket-row">
+          <div className="window-pfp">
+            {/* Insert your profile picture here */}
+          </div>
+          <div className="window-ticket-column">
+            <p className="window-ticket-name">{name}</p>
+            <p className="window-ticket-value">{num}</p>
+          </div>  
+        </div>
+        <div className="window-ticket-column">
+          <p className="window-ticket-name">{date}</p>
+          <p className="window-ticket-name">Terrain {terrain}</p>
+          <p className="window-ticket-name">18:00 - 19:00</p>
+        </div>
+    </div>
+  )
+}
+
 const TableItem = () => {
   const [quantity, setQuantity] = useState(0);
 
@@ -45,6 +86,14 @@ const SideWindow = () => {
       {isOpen && (
         <div className="side-window">
           <div className="window-header">
+            <TicketInfo
+              id={123}
+              terrain={1}
+              time="16h-17h"
+              name="John Doe"
+              num="06.01.25.50.18"
+              date="13/07/2023"
+            />
             <div className="close-div" onClick={handleClose}>
               <CloseButton/>
             </div>
