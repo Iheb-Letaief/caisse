@@ -1,11 +1,14 @@
 .footerD {
     background-color: rgb(176, 174, 174);
     color: #ffffff;
-    width: 50%;
+    width: 60%;
     height: 50px;
     padding: 10px;
     display: flex;
     justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    margin-left: 5px;
   }
 
   .disabled {

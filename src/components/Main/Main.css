@@ -1,0 +1,17 @@
+.main-content {
+    width: 68%;
+  }
+
+.main-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #3db6e2e6;
+}
+
+.header-reste{
+    margin-left: 25px;
+    margin-top: 35px;
+    font-size: large;
+    font-style: italic;
+}

@@ -1,5 +1,6 @@
 import React from "react";
 import "./Calculator.css";
+import { SoldeButton } from "../../Buttons/Buttons";
 
 interface CalculatorState {
   result: string;
@@ -141,7 +142,7 @@ class Calculator extends React.Component<{}, CalculatorState> {
         </div>
         <div className="button-row">
           <button className="calculate-button" onClick={this.handleCalculate}>
-            =
+            <SoldeButton/>
           </button>
         </div>
       </div>

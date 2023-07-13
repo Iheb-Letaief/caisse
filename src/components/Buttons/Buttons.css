@@ -75,10 +75,12 @@ button{
 
 .solde-btn{
     color: #00b876;
-    background-color: #00b87537;
+    background-color: #02d38638;
+    font-size: medium;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
+    width: 100px;
     font-weight: bold;
 }
 
