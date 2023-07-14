@@ -1,6 +1,6 @@
-import React from "react";
+import React, { ChangeEvent, useState } from "react";
 import "./Cards.css";
-import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
+import { IconDefinition, faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const PlayerCard = () => {
@@ -70,4 +70,28 @@ const FootHpCard = () => {
   )
 }
 
-export { PlayerCard, PlayerCard2, PlayerCard3, PayCard, EncaisseCard, FootHpCard };
+interface CardProps {
+  label: string;
+  icon: IconDefinition;
+  value: string;
+  onChange: (value: string) => void;
+}
+
+const PaiementCard: React.FC<CardProps> = ({ label, icon, value, onChange }) => {
+  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+    onChange(event.target.value);
+  }; 
+
+  return (
+    <div className="paiement-card">
+      <input type="text" value={value} onChange={handleInputChange} className="paiement-card-input"/>
+      <div className="label-icon">
+        <div className="paiement-card-label">{label}</div>
+        <div className="paiement-card-icon"><FontAwesomeIcon icon={icon} /></div>
+      </div>
+      
+    </div>
+  );
+};
+
+export { PlayerCard, PlayerCard2, PlayerCard3, PayCard, EncaisseCard, FootHpCard, PaiementCard};

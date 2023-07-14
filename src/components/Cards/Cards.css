@@ -165,3 +165,42 @@
   .foot-value{
     margin: 0;
   }
+
+  .paiement-card {
+    background-color: #0b6cff;
+    color: #ffffff;
+    width: 190px;
+    height: 60px;
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+  }
+
+  .label-icon{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    height: fit-content;
+  }
+  
+  .paiement-card-icon {
+    font-size: x-large;
+    width: fit-content;
+  }
+  
+  .paiement-card-label {
+    font-weight: bold;
+    width: fit-content;
+
+  }
+
+  .paiement-card-input{
+    height: 35px;
+    width: 80px;
+  } 
+  
