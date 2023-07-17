@@ -176,7 +176,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
+    margin-bottom: 10px;
   }
 
   .label-icon{
@@ -184,7 +184,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: fit-content;
+    width: 100px;
     height: fit-content;
   }
   
@@ -196,7 +196,6 @@
   .paiement-card-label {
     font-weight: bold;
     width: fit-content;
-
   }
 
   .paiement-card-input{

@@ -1,12 +1,10 @@
 import Sidebar from './components/Sidebar/Sidebar';
 import './App.css';
 import SideWindow from './components/SideWindow/SideWindow';
-import Tickets from './components/Cards/Tickets';
-import MainContent from './components/Main/Main';
-import { PaiementCard } from './components/Cards/Cards';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCreditCard } from "@fortawesome/free-solid-svg-icons";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { useState } from 'react';
+import PaiementPartiel from './pages/Paiement/PaiementPartiel';
+import Navigation from './pages/Navigation';
 
 
 
@@ -20,7 +18,11 @@ function App() {
   return (
     <div className="app">
       <Sidebar />
-      <MainContent/>
+      <Router>
+        <Routes>
+          <Route path="/" element={<PaiementPartiel/>} />
+        </Routes> 
+      </Router>
       <SideWindow/>
     </div>
   );
