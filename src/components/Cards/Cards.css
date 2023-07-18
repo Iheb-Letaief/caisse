@@ -147,14 +147,14 @@
 
   .foot-card{
     position: relative;
-    background-color: #B9D9EB;
+    background-color: #EDF5FC;
     height: 80px;
     width: 180px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    color: #0b6cff;
+    color: #7EB5E5;
     
   }
 
@@ -201,5 +201,9 @@
   .paiement-card-input{
     height: 35px;
     width: 80px;
+    color: #0b6cff;
+    font-style: italic;
+    font-size: large;
+    text-align: end;
   } 
   

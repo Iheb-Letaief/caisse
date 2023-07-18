@@ -1,153 +1,110 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Calculator.css";
 import { SoldeButton } from "../../Buttons/Buttons";
+
+interface CalculatorProps {
+  onSoldeButtonClick: (result: string) => void;
+}
 
 interface CalculatorState {
   result: string;
 }
 
-class Calculator extends React.Component<{}, CalculatorState> {
-  constructor(props: {}) {
-    super(props);
-    this.state = {
-      result: "0",
-    };
-  }
+const Calculator: React.FC<CalculatorProps> = ({ onSoldeButtonClick }) => {
+  const [result, setResult] = useState("0");
 
-  handleClick = (value: string) => {
-    if (this.state.result === "0") {
-      this.setState({ result: value });
+  const handleClick = (value: string) => {
+    if (result === "0") {
+      setResult(value);
     } else {
-      this.setState((prevState) => ({ result: prevState.result + value }));
+      setResult((prevResult) => prevResult + value);
     }
   };
 
-  handleClear = () => {
-    this.setState({ result: "0" });
+  const handleClear = () => {
+    setResult("0");
   };
 
-  handleCalculate = () => {
+  const handleCalculate = () => {
     try {
-      const calculatedResult = eval(this.state.result);
-      this.setState({ result: String(calculatedResult) });
+      const calculatedResult = eval(result);
+      setResult(String(calculatedResult));
     } catch (error) {
-      this.setState({ result: "Error" });
+      setResult("Error");
     }
   };
 
-  render() {
-    return (
-      <div className="calculator">
-        <div className="result-box">{this.state.result}</div>
-        <div className="button-row">
-          <button
-            className="number-button"
-            onClick={() => this.handleClick("7")}
-          >
-            7
-          </button>
-          <button
-            className="number-button"
-            onClick={() => this.handleClick("8")}
-          >
-            8
-          </button>
-          <button
-            className="number-button"
-            onClick={() => this.handleClick("9")}
-          >
-            9
-          </button>
-          <button
-            className="operation-button"
-            onClick={() => this.handleClick("/")}
-          >
-            ÷
-          </button>
-        </div>
-        <div className="button-row">
-          <button
-            className="number-button"
-            onClick={() => this.handleClick("4")}
-          >
-            4
-          </button>
-          <button
-            className="number-button"
-            onClick={() => this.handleClick("5")}
-          >
-            5
-          </button>
-          <button
-            className="number-button"
-            onClick={() => this.handleClick("6")}
-          >
-            6
-          </button>
-          <button
-            className="operation-button"
-            onClick={() => this.handleClick("*")}
-          >
-            ×
-          </button>
-        </div>
-        <div className="button-row">
-          <button
-            className="number-button"
-            onClick={() => this.handleClick("1")}
-          >
-            1
-          </button>
-          <button
-            className="number-button"
-            onClick={() => this.handleClick("2")}
-          >
-            2
-          </button>
-          <button
-            className="number-button"
-            onClick={() => this.handleClick("3")}
-          >
-            3
-          </button>
-          <button
-            className="operation-button"
-            onClick={() => this.handleClick("-")}
-          >
-            -
-          </button>
-        </div>
-        <div className="button-row">
-          <button
-            className="number-button"
-            onClick={() => this.handleClick("0")}
-          >
-            0
-          </button>
-          <button
-            className="number-button"
-            onClick={() => this.handleClick(".")}
-          >
-            .
-          </button>
-          <button className="clear-button" onClick={this.handleClear}>
-            C
-          </button>
-          <button
-            className="operation-button"
-            onClick={() => this.handleClick("+")}
-          >
-            +
-          </button>
-        </div>
-        <div className="button-row">
-          <button className="calculate-button" onClick={this.handleCalculate}>
-            <SoldeButton/>
-          </button>
-        </div>
+  const handleSoldeButtonClick = () => {
+    handleCalculate();
+    onSoldeButtonClick(result);
+  };
+
+  return (
+    <div className="calculator">
+      <div className="result-box">{result}</div>
+      <div className="button-row">
+        <button className="number-button" onClick={() => handleClick("7")}>
+          7
+        </button>
+        <button className="number-button" onClick={() => handleClick("8")}>
+          8
+        </button>
+        <button className="number-button" onClick={() => handleClick("9")}>
+          9
+        </button>
+        <button className="operation-button" onClick={() => handleClick("/")}>
+          ÷
+        </button>
       </div>
-    );
-  }
-}
+      <div className="button-row">
+        <button className="number-button" onClick={() => handleClick("4")}>
+          4
+        </button>
+        <button className="number-button" onClick={() => handleClick("5")}>
+          5
+        </button>
+        <button className="number-button" onClick={() => handleClick("6")}>
+          6
+        </button>
+        <button className="operation-button" onClick={() => handleClick("*")}>
+          ×
+        </button>
+      </div>
+      <div className="button-row">
+        <button className="number-button" onClick={() => handleClick("1")}>
+          1
+        </button>
+        <button className="number-button" onClick={() => handleClick("2")}>
+          2
+        </button>
+        <button className="number-button" onClick={() => handleClick("3")}>
+          3
+        </button>
+        <button className="operation-button" onClick={() => handleClick("-")}>
+          -
+        </button>
+      </div>
+      <div className="button-row">
+        <button className="number-button" onClick={() => handleClick("0")}>
+          0
+        </button>
+        <button className="number-button" onClick={() => handleClick(".")}>
+          .
+        </button>
+        <button className="clear-button" onClick={handleClear}>
+          C
+        </button>
+        <button className="operation-button" onClick={() => handleClick("+")}>
+          +
+        </button>
+      </div>
+      <div className="button-row">
+        <button className="calculate-button" onClick={handleSoldeButtonClick}>
+          <SoldeButton />
+        </button>
+      </div>
+    </div>
+  );
+};
 
 export default Calculator;

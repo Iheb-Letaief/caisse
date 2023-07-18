@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { useState } from 'react';
 import PaiementPartiel from './pages/Paiement/PaiementPartiel';
 import Navigation from './pages/Navigation';
+import FootHP from './pages/FootHP/FootHP';
 
 
 
@@ -20,7 +21,7 @@ function App() {
       <Sidebar />
       <Router>
         <Routes>
-          <Route path="/" element={<PaiementPartiel/>} />
+          <Route path="/" element={<FootHP/>} />
         </Routes> 
       </Router>
       <SideWindow/>
