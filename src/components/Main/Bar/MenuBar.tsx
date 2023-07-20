@@ -2,7 +2,7 @@ import React from "react";
 import "./Bar.css";
 
 const MenuBar = () => {
-  const menuItems = ["Menu Burger", "Menuu salade"];
+  const menuItems = ["Menu Burger", "Menu salade"];
 
   return (
     <div className="bar" style={{ backgroundColor: "#5bc0de" }}>

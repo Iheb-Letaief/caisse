@@ -146,7 +146,6 @@
   }
 
   .foot-card{
-    position: relative;
     background-color: #EDF5FC;
     height: 80px;
     width: 180px;
@@ -155,8 +154,15 @@
     justify-content: center;
     flex-direction: column;
     color: #7EB5E5;
-    
+    margin: 1px;
   }
+
+  .bar-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+  }
+  
 
   .foot-label{
     margin: 0;

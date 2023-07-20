@@ -3,9 +3,9 @@ import './App.css';
 import SideWindow from './components/SideWindow/SideWindow';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { useState } from 'react';
-import PaiementPartiel from './pages/Paiement/PaiementPartiel';
-import Navigation from './pages/Navigation';
+import PaiementPartiel from './pages/Paiement&Remise/PaiementPartiel';
 import FootHP from './pages/FootHP/FootHP';
+import Remise from './pages/Paiement&Remise/Remise';
 
 
 
@@ -17,15 +17,17 @@ function App() {
   };
 
   return (
-    <div className="app">
-      <Sidebar />
-      <Router>
-        <Routes>
-          <Route path="/" element={<FootHP/>} />
-        </Routes> 
-      </Router>
-      <SideWindow/>
-    </div>
+    <Router>
+      <div className="app">
+        <Sidebar />
+          <Routes>
+            <Route path="/" element={<PaiementPartiel/>} />
+            <Route path="/activite" element={<FootHP/>} />
+          </Routes> 
+        <SideWindow/>
+      </div>
+    </Router>
+    
   );
 }
 

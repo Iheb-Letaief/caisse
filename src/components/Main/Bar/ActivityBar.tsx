@@ -11,17 +11,32 @@ const ActivityBar = () => {
   };
 
   return (
-    <div className="bar">
-      {activityItems.map((item, index) => (
-        <div className="container" key={index} onClick={() => handleActivitySelection(item)}>
-          <span>{item}</span>
-        </div>
-      ))}
-      <div className="bar-card">
-        {selectedActivity && <FootHpCard/> }
+    <div className="activity-bar">
+      <div className="bar">
+        {activityItems.map((item, index) => (
+          <div className="container" key={index} onClick={() => handleActivitySelection(item)}>
+            <span>{item}</span>
       </div>
-      
+        ))}
+      </div>
+      <div className="bar-card">
+        {selectedActivity && <FootHpCard/>}
+        {selectedActivity && <FootHpCard/>}
+        {selectedActivity && <FootHpCard/>}
+        {selectedActivity && <FootHpCard/>}
+        {selectedActivity && <FootHpCard/>}
+        {selectedActivity && <FootHpCard/>}
+      </div>
+      <div className="bar-card">
+        {selectedActivity && <FootHpCard/>}
+        {selectedActivity && <FootHpCard/>}
+        {selectedActivity && <FootHpCard/>}
+        {selectedActivity && <FootHpCard/>}
+        {selectedActivity && <FootHpCard/>}
+        {selectedActivity && <FootHpCard/>}
+      </div>
     </div>
+    
   );
 };
 

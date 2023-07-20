@@ -12,19 +12,20 @@ import {
   faCalendarDays,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const Sidebar: React.FC = () => {
   return (
     <div className="sidebar">
       <ul>
         <li>
-          <a href="#">
+          <Link to="/activite" >
             <div className="sidebar-item">
                 <div className="sidebar-icon"><FontAwesomeIcon icon={faFutbol} size="xl" /></div>
                 <span className="sidebar-text">Activité</span>
             </div>
             
-          </a>
+          </Link>
         </li>
         <li>
           <a href="#">
@@ -53,7 +54,6 @@ const Sidebar: React.FC = () => {
             
           </a>
         </li>
-
 
         <div className="sidebar-bottom">
           <li>
