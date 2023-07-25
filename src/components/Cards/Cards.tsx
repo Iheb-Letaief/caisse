@@ -61,14 +61,21 @@ const EncaisseCard = () => {
   )
 }
 
-const FootHpCard = () => {
-  return(
-    <div className="foot-card">
-      <h2 className="foot-label">{/*footLabel - footTime*/}HP - 1H</h2>
-      <h2 className="foot-value">{/*nbPers - prix*/} 9 pers - 90$</h2>
-    </div>
-  )
+interface FootHpCardProps {
+  footLabel: string;
+  footTime: string;
+  nbPers: number;
+  prix: number;
 }
+
+const FootHpCard: React.FC<FootHpCardProps> = ({ footLabel, footTime, nbPers, prix }) => {
+  return (
+    <div className="foot-card">
+      <h2 className="foot-label">{footLabel} - {footTime}</h2>
+      <h2 className="foot-value">{nbPers} pers - {prix}$</h2>
+    </div>
+  );
+};
 
 interface CardProps {
   label: string;
