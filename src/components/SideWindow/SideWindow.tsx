@@ -12,6 +12,12 @@ interface TicketProps {
   num: string;
 }
 
+interface TableItemProps {
+  label: string;
+  price: number;
+  initialQuantity?: number;
+}
+
 const TicketInfo: React.FC<TicketProps> = ({
   id, 
   terrain,
@@ -28,7 +34,7 @@ const TicketInfo: React.FC<TicketProps> = ({
       </div>
       <div className="window-ticket-row">
           <div className="window-pfp">
-            {/* Insert your profile picture here */}
+            {/* pfp */}
           </div>
           <div className="window-ticket-column">
             <p className="window-ticket-name">{name}</p>
@@ -44,8 +50,10 @@ const TicketInfo: React.FC<TicketProps> = ({
   )
 }
 
-const TableItem = () => {
-  const [quantity, setQuantity] = useState(0);
+
+
+const TableItem: React.FC<TableItemProps> = ({ label, price, initialQuantity = 0 }) => {
+  const [quantity, setQuantity] = useState(initialQuantity);
 
   const handleIncrement = () => {
     setQuantity(quantity + 1);
@@ -68,11 +76,12 @@ const TableItem = () => {
           +
         </button>
       </td>
-      <td className="label-cell">FOOT HP 1H 10 pers</td>
-      <td className="price-cell">90$</td>
+      <td className="label-cell">{label}</td>
+      <td className="price-cell">{price}$</td>
     </tr>
   );
 };
+
 
 const SideWindow = () => {
   const [isOpen, setIsOpen] = useState(true);
@@ -110,12 +119,11 @@ const SideWindow = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  <TableItem/>
-                  <TableItem/>
-                  <TableItem/>
-                  <TableItem/>
-                  <TableItem/>
-                  <TableItem/>
+                  <TableItem label="FOOT HP 1H 10 pers" price={90}/>
+                  <TableItem label="FOOT HP 1H 10 pers" price={90}/>
+                  <TableItem label="FOOT HP 1H 10 pers" price={90}/>
+                  <TableItem label="FOOT HP 1H 10 pers" price={90}/>
+                  <TableItem label="FOOT HP 1H 10 pers" price={90}/>
                 </tbody>
               </table>
 
@@ -129,7 +137,6 @@ const SideWindow = () => {
                 <div>TOTAL T.T.C</div>
                 <div>{ /*total*/ }90 $</div>
               </div>
-              
 
               <div className="btn-row1">
                 <EspButton/>
