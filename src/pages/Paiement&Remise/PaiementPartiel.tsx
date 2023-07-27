@@ -44,6 +44,10 @@ const PaiementPartiel: React.FC = () => {
     setSoldeButtonClicked(true);
   };
 
+  const handleResultChange = (result: string) => {
+    setEspecesValue(result); 
+  };
+
 
   return (
     <div className="main-content">
@@ -53,7 +57,7 @@ const PaiementPartiel: React.FC = () => {
       </div>
       <div className="content-container">
         <div className="left-section">
-          <Calculator onSoldeButtonClick={handleSoldeButtonClick} />
+          <Calculator onSoldeButtonClick={handleSoldeButtonClick} onResultChange={handleResultChange} />
           <div className="main-total-container">Total {/*total*/} 0$</div>
           {soldeButtonClicked ? (
             <div className="main-validate-btn">

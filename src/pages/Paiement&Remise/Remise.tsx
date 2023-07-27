@@ -44,6 +44,14 @@ const Remise: React.FC = () => {
     setSoldeButtonClicked(true);
   };
 
+  const handleResultChange = (result: string) => {
+    try {
+      const calculatedResult = eval(result); 
+      setEspecesValue(String(calculatedResult)); 
+    } catch (error) {
+      setEspecesValue("Error"); 
+    }
+  };
 
   return (
     <div className="main-content">
@@ -52,7 +60,7 @@ const Remise: React.FC = () => {
       </div>
       <div className="content-container">
         <div className="left-section">
-          <Calculator onSoldeButtonClick={handleSoldeButtonClick} />
+          <Calculator onSoldeButtonClick={handleSoldeButtonClick} onResultChange={handleResultChange} />
           <div className="main-total-container">Total {/*total*/} 0$</div>
           {soldeButtonClicked ? (
             <div className="main-validate-btn">

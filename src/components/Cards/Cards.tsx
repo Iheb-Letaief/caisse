@@ -2,16 +2,22 @@ import React, { ChangeEvent, useState } from "react";
 import "./Cards.css";
 import { IconDefinition, faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { stringify } from "querystring";
 
-const PlayerCard = () => {
+interface PlayerProps{
+  name: string;
+  price: number;
+}
+
+const PlayerCard: React.FC<PlayerProps> = ({name, price}) => {
   return (
     <div className="player-card1">
       <button className="player-edit1">
         <FontAwesomeIcon icon={faPenToSquare} />
       </button>
       <div className="player-info1">
-        <h3 className="player-name1">Joueur 1</h3>
-        <p className="player-price1">9$</p>
+        <h3 className="player-name1">{name}</h3>
+        <p className="player-price1">{price}$</p>
       </div>
     </div>
   );

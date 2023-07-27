@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./SideWindow.css";
 import { AttenteButton, AutreButton, CbButton, CloseButton, EncaisserButton, EspButton, RemiseButton } from "../Buttons/Buttons";
+import { PlayerCard } from "../Cards/Cards";
 
 
 interface TicketProps {
@@ -54,6 +55,7 @@ const TicketInfo: React.FC<TicketProps> = ({
 
 const TableItem: React.FC<TableItemProps> = ({ label, price, initialQuantity = 0 }) => {
   const [quantity, setQuantity] = useState(initialQuantity);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false); // State variable to control dropdown visibility
 
   const handleIncrement = () => {
     setQuantity(quantity + 1);
@@ -65,20 +67,45 @@ const TableItem: React.FC<TableItemProps> = ({ label, price, initialQuantity = 0
     }
   };
 
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  //const nb_joueurs = 10;
+
   return (
-    <tr>
-      <td className="quantity-cell">
-        <button className="decrement-button" onClick={handleDecrement}>
-          -
-        </button>
-        <span className="quantity">{quantity}</span>
-        <button className="increment-button" onClick={handleIncrement}>
-          +
-        </button>
-      </td>
-      <td className="label-cell">{label}</td>
-      <td className="price-cell">{price}$</td>
-    </tr>
+    <>
+      <tr>
+        <td className="quantity-cell">
+          <button className="decrement-button" onClick={handleDecrement}>
+            -
+          </button>
+          <span className="quantity">{quantity}</span>
+          <button className="increment-button" onClick={handleIncrement}>
+            +
+          </button>
+        </td>
+        <td className="label-cell">{label}</td>
+        <td className="price-cell">
+          {price}$
+          <button className="arrow-btn" onClick={toggleDropdown}>
+            {isDropdownOpen ? '▲' : '▼'}
+          </button>
+        </td>
+      </tr>
+      {isDropdownOpen && (
+        <tr>
+          <td colSpan={3} className="dropdown-container">
+            <div className="players-container">
+              {Array.from({length: quantity}, (_, index) =>(
+                <PlayerCard key={index} name={'Joueur ' + (index+1)} price={9}/>
+              ))}
+            </div>
+            
+          </td>
+        </tr>
+      )}
+    </>
   );
 };
 
@@ -137,6 +164,7 @@ const SideWindow = () => {
                 <div>TOTAL T.T.C</div>
                 <div>{ /*total*/ }90 $</div>
               </div>
+
 
               <div className="btn-row1">
                 <EspButton/>

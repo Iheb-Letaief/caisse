@@ -153,6 +153,32 @@
     font-weight: bold;
   }
 
+  /* Customize the arrow button */
+.arrow-btn {
+  background-color: #f1f1f1;
+  border: none;
+  margin-left: 20px;
+  font-size: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.arrow-btn:hover {
+  background-color: #ddd;
+}
+
+.dropdown-container {
+  background-color: #f9f9f9;
+  padding: 10px;
+}
+
+.players-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px; 
+}
+
+
 
 /* Ticket Info */
 
