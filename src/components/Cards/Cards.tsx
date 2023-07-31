@@ -88,20 +88,28 @@ interface CardProps {
   icon: IconDefinition;
   value: string;
   onChange: (value: string) => void;
+  onClick: () => void;
 }
 
-const PaiementCard: React.FC<CardProps> = ({ label, icon, value, onChange }) => {
+const PaiementCard: React.FC<CardProps> = ({ label, icon, value, onChange, onClick }) => {
+
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     onChange(event.target.value);
   }; 
 
+  
+  const handleCopyToClipboard = () => {
+    navigator.clipboard.writeText(value);
+    console.log(value);
+  };
+
   return (
     <div className="paiement-card">
       <input type="text" value={value} onChange={handleInputChange} className="paiement-card-input"/>
-      <div className="label-icon">
+      <button className="label-icon" onClick={onClick}>
         <div className="paiement-card-label">{label}</div>
         <div className="paiement-card-icon"><FontAwesomeIcon icon={icon} /></div>
-      </div>
+      </button>
       
     </div>
   );

@@ -192,6 +192,10 @@
     justify-content: center;
     width: 100px;
     height: fit-content;
+    cursor: pointer;
+    border: none;
+    background: none;
+    color: #fff;
   }
   
   .paiement-card-icon {

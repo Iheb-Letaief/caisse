@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./Calculator.css";
 import { SoldeButton } from "../../Buttons/Buttons";
 
@@ -7,9 +7,6 @@ interface CalculatorProps {
   onResultChange: (result: string) => void;
 }
 
-interface CalculatorState {
-  result: string;
-}
 
 const Calculator: React.FC<CalculatorProps> = ({ onSoldeButtonClick, onResultChange }) => {
   const [result, setResult] = useState("0");
@@ -31,8 +28,10 @@ const Calculator: React.FC<CalculatorProps> = ({ onSoldeButtonClick, onResultCha
     try {
       const calculatedResult = eval(result);
       setResult(String(calculatedResult));
+      onResultChange(String(calculatedResult));
     } catch (error) {
       setResult("Error");
+      onResultChange("Error");
     }
   };
 
@@ -41,9 +40,6 @@ const Calculator: React.FC<CalculatorProps> = ({ onSoldeButtonClick, onResultCha
     onSoldeButtonClick();
   };
 
-  useEffect(() => {
-    onResultChange(result);
-  }, [result]);
 
   
   return (

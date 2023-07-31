@@ -9,10 +9,10 @@ import { DisableValidateButton, ValidateButton } from "../../components/Buttons/
 const Remise: React.FC = () => {
   const [especesValue, setEspecesValue] = useState("");
   const [cbValue, setCbValue] = useState("");
-  const [ticketValue, setTicketValue] = useState("");
   const [carteValue, setCarteValue] = useState("");
-  const [couponValue, setCouponValue] = useState("");
   const [abonnementValue, setAbonnementValue] = useState("");
+  const [calculatorResult, setCalculatorResult] = useState("0");
+
 
   const [soldeButtonClicked, setSoldeButtonClicked] = useState(false);
 
@@ -23,17 +23,9 @@ const Remise: React.FC = () => {
   const handleCbChange = (value: string) => {
     setCbValue(value);
   };
-
-  const handleTicketChange = (value: string) => {
-    setTicketValue(value);
-  };
-
+ 
   const handleCarteChange = (value: string) => {
     setCarteValue(value);
-  };
-
-  const handleCouponChange = (value: string) => {
-    setCouponValue(value);
   };
 
   const handleAbonnementChange = (value: string) => {
@@ -44,14 +36,25 @@ const Remise: React.FC = () => {
     setSoldeButtonClicked(true);
   };
 
-  const handleResultChange = (result: string) => {
-    try {
-      const calculatedResult = eval(result); 
-      setEspecesValue(String(calculatedResult)); 
-    } catch (error) {
-      setEspecesValue("Error"); 
-    }
-  };
+ 
+
+  const handleEspecesClick = () => {
+    setEspecesValue(calculatorResult);
+  }
+
+  const handleCbClick = () => {
+    setCbValue(calculatorResult);
+  }
+
+  const handleCarteClick = () => {
+    setCarteValue(calculatorResult);
+  }
+
+  const handleAbonnementClick = () => {
+    setAbonnementValue(calculatorResult);
+  }
+
+  
 
   return (
     <div className="main-content">
@@ -60,7 +63,7 @@ const Remise: React.FC = () => {
       </div>
       <div className="content-container">
         <div className="left-section">
-          <Calculator onSoldeButtonClick={handleSoldeButtonClick} onResultChange={handleResultChange} />
+          <Calculator onSoldeButtonClick={handleSoldeButtonClick} onResultChange={(result) => setCalculatorResult(result)} />
           <div className="main-total-container">Total {/*total*/} 0$</div>
           {soldeButtonClicked ? (
             <div className="main-validate-btn">
@@ -81,12 +84,14 @@ const Remise: React.FC = () => {
             icon={faCoins}
             value={especesValue}
             onChange={handleEspecesChange}
+            onClick={handleEspecesClick}
           />
           <PaiementCard
             label="CB"
             icon={faCreditCard}
             value={cbValue}
             onChange={handleCbChange}
+            onClick={handleCbClick}
           />
           
           <PaiementCard
@@ -94,6 +99,7 @@ const Remise: React.FC = () => {
             icon={faAddressCard}
             value={carteValue}
             onChange={handleCarteChange}
+            onClick={handleCarteClick}
           />
           
           <PaiementCard
@@ -101,6 +107,7 @@ const Remise: React.FC = () => {
             icon={faCoins}
             value={abonnementValue}
             onChange={handleAbonnementChange}
+            onClick={handleAbonnementClick}
           />
         </div>
       </div>
