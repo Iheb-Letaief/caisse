@@ -5,6 +5,7 @@ import "./PaiementPartiel.css";
 import { PaiementCard } from "../../components/Cards/Cards";
 import { faCoins, faCreditCard, faTicket, faAddressCard, faReceipt } from "@fortawesome/free-solid-svg-icons";
 import { DisableValidateButton, ValidateButton } from "../../components/Buttons/Buttons";
+import Footer from "../../components/Main/Footer/Footer";
 
 const Remise: React.FC = () => {
   const [especesValue, setEspecesValue] = useState("");
@@ -111,7 +112,7 @@ const Remise: React.FC = () => {
           />
         </div>
       </div>
-      <FooterMain />
+      <Footer />
     </div>
   );
 };

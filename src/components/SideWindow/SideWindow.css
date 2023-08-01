@@ -153,7 +153,6 @@
     font-weight: bold;
   }
 
-  /* Customize the arrow button */
 .arrow-btn {
   background-color: #f1f1f1;
   border: none;
@@ -226,4 +225,23 @@
   }
   
   
+  @media screen and (max-width: 1180px) and (max-height: 820px) {
+
+    .window-header {
+      justify-content: center; 
+    }
+  
+    .window-ticket-info {
+      font-size: 13px; 
+    }
+
+    .btn-row1{
+      width: 80%;
+    }
+  
+    .btn-row2{
+      width: 80%;
+    }
+  
+  }
   

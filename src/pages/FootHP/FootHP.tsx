@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import "./FootHP.css";
 import ActivityBar from "../../components/Main/Bar/ActivityBar";
 import FooterMain from "../../components/Main/Footer/FooterMain";
+import Footer from "../../components/Main/Footer/Footer";
 
 
 const FootHP: React.FC = () => {
@@ -12,7 +13,7 @@ const FootHP: React.FC = () => {
             <ActivityBar/>
         </div>
         <div>
-            <FooterMain/>
+            <Footer/>
         </div>
         
     </div>
