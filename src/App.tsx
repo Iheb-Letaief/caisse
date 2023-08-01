@@ -21,8 +21,10 @@ function App() {
       <div className="app">
         <Sidebar />
           <Routes>
-            <Route path="/" element={<PaiementPartiel/>} />
+            <Route path="/" element={<FootHP/>} />
             <Route path="/activite" element={<FootHP/>} />
+            <Route path="/paiement" element={<PaiementPartiel/>} />
+            <Route path="/remise" element={<Remise/>} />
           </Routes> 
         <SideWindow/>
       </div>

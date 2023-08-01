@@ -101,7 +101,7 @@ export const CbButton = () => {
 export const AutreButton = () => {
   return(
     <button className="window-btn2">
-      <div className="label-window-btn">Autre</div><FontAwesomeIcon icon={faRotate} size="xl" />
+      <div className="label-window-btn"><a href="/paiement">Autre</a></div><FontAwesomeIcon icon={faRotate} size="xl" />
     </button>
   )
 }

@@ -31,6 +31,16 @@
     height: 70px;
     margin-bottom: 10px;
   }
+
+  .sidebar-item.active {
+    background-color: #afd7fa;
+  }
+  
+  .sidebar-item.active .sidebar-icon,
+  .sidebar-item.active .sidebar-text {
+    color: #000000;
+  }
+  
   
   .sidebar-icon {
     width: 40px;

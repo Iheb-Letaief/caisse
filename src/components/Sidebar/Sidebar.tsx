@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Sidebar.css";
 import { Link } from "react-router-dom";
 import * as Icons from "../../utils/Icons"; // Import all SVG icons from the icons.js file
 
 const Sidebar: React.FC = () => {
+  const [selectedItem, setSelectedItem] = useState<number | null>(null);
+
   const menuItems = [
     { icon: <Icons.FutbolIcon />, text: "Activité", link: "/activite" },
     { icon: <Icons.ChampagneIcon />, text: "Boissons", link: "#" },
@@ -16,6 +18,10 @@ const Sidebar: React.FC = () => {
     { icon: <Icons.UserIcon />, text: "Clients", link: "#" },
   ];
 
+  const handleItemClick = (index: number) => {
+    setSelectedItem(index);
+  };
+
   return (
     <div className="sidebar">
       <ul>
@@ -23,14 +29,24 @@ const Sidebar: React.FC = () => {
           <li key={index}>
             {menuItem.link ? (
               <Link to={menuItem.link}>
-                <div className="sidebar-item">
+                <div
+                  className={`sidebar-item ${
+                    selectedItem === index ? "active" : ""
+                  }`}
+                  onClick={() => handleItemClick(index)}
+                >
                   <div className="sidebar-icon">{menuItem.icon}</div>
                   <span className="sidebar-text">{menuItem.text}</span>
                 </div>
               </Link>
             ) : (
               <a href="#">
-                <div className="sidebar-item">
+                <div
+                  className={`sidebar-item ${
+                    selectedItem === index ? "active" : ""
+                  }`}
+                  onClick={() => handleItemClick(index)}
+                >
                   <div className="sidebar-icon">{menuItem.icon}</div>
                   <span className="sidebar-text">{menuItem.text}</span>
                 </div>
@@ -42,6 +58,5 @@ const Sidebar: React.FC = () => {
     </div>
   );
 };
-
 
 export default Sidebar;
