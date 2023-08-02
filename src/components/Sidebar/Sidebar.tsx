@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import * as Icons from "../../utils/Icons"; // Import all SVG icons from the icons.js file
 
 const Sidebar: React.FC = () => {
-  const [selectedItem, setSelectedItem] = useState<number | null>(null);
+  const [selectedItems, setSelectedItems] = useState<Array<number | null>>([null, null]);
 
   const menuItems = [
     { icon: <Icons.FutbolIcon />, text: "Activité", link: "/activite" },
@@ -18,43 +18,86 @@ const Sidebar: React.FC = () => {
     { icon: <Icons.UserIcon />, text: "Clients", link: "#" },
   ];
 
-  const handleItemClick = (index: number) => {
-    setSelectedItem(index);
+  const menuArticles = menuItems.slice(0, 4);
+  const menuOperations = menuItems.slice(4, 8);
+
+  const handleItemClick = (section: number, index: number) => {
+    setSelectedItems((prevSelectedItems) => {
+      const newSelectedItems = [...prevSelectedItems];
+      newSelectedItems[section] = index;
+      return newSelectedItems;
+    });
   };
 
   return (
     <div className="sidebar">
-      <ul>
-        {menuItems.map((menuItem, index) => (
-          <li key={index}>
-            {menuItem.link ? (
-              <Link to={menuItem.link}>
-                <div
-                  className={`sidebar-item ${
-                    selectedItem === index ? "active" : ""
-                  }`}
-                  onClick={() => handleItemClick(index)}
-                >
-                  <div className="sidebar-icon">{menuItem.icon}</div>
-                  <span className="sidebar-text">{menuItem.text}</span>
-                </div>
-              </Link>
-            ) : (
-              <a href="#">
-                <div
-                  className={`sidebar-item ${
-                    selectedItem === index ? "active" : ""
-                  }`}
-                  onClick={() => handleItemClick(index)}
-                >
-                  <div className="sidebar-icon">{menuItem.icon}</div>
-                  <span className="sidebar-text">{menuItem.text}</span>
-                </div>
-              </a>
-            )}
-          </li>
-        ))}
-      </ul>
+      <div className="sidebar-top">
+        <ul>
+          {menuArticles.map((menuItem, index) => (
+            <li key={index}>
+              {menuItem.link ? (
+                <Link to={menuItem.link}>
+                  <div
+                    className={`sidebar-item ${
+                      selectedItems[0] === index ? "active" : ""
+                    }`}
+                    onClick={() => handleItemClick(0, index)}
+                  >
+                    <div className="sidebar-icon">{menuItem.icon}</div>
+                    <span className="sidebar-text">{menuItem.text}</span>
+                  </div>
+                </Link>
+              ) : (
+                <a href="#">
+                  <div
+                    className={`sidebar-item ${
+                      selectedItems[0] === index ? "active" : ""
+                    }`}
+                    onClick={() => handleItemClick(0, index)}
+                  >
+                    <div className="sidebar-icon">{menuItem.icon}</div>
+                    <span className="sidebar-text">{menuItem.text}</span>
+                  </div>
+                </a>
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div className="sidebar-bottom">
+        <ul>
+          {menuOperations.map((menuItem, index) => (
+            <li key={index}>
+              {menuItem.link ? (
+                <Link to={menuItem.link}>
+                  <div
+                    className={`sidebar-item ${
+                      selectedItems[1] === index ? "active" : ""
+                    }`}
+                    onClick={() => handleItemClick(1, index)}
+                  >
+                    <div className="sidebar-icon">{menuItem.icon}</div>
+                    <span className="sidebar-text">{menuItem.text}</span>
+                  </div>
+                </Link>
+              ) : (
+                <a href="#">
+                  <div
+                    className={`sidebar-item ${
+                      selectedItems[1] === index ? "active" : ""
+                    }`}
+                    onClick={() => handleItemClick(1, index)}
+                  >
+                    <div className="sidebar-icon">{menuItem.icon}</div>
+                    <span className="sidebar-text">{menuItem.text}</span>
+                  </div>
+                </a>
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };

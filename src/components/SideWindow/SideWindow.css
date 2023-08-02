@@ -242,6 +242,14 @@
     .btn-row2{
       width: 80%;
     }
-  
+
+    .label-cell {
+      font-size: small;
+    }
+
+    .price-cell {
+      font-size: small;
+    }
+
   }
   

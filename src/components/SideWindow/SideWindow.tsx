@@ -55,7 +55,7 @@ const TicketInfo: React.FC<TicketProps> = ({
 
 const TableItem: React.FC<TableItemProps> = ({ label, price, initialQuantity = 0 }) => {
   const [quantity, setQuantity] = useState(initialQuantity);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false); // State variable to control dropdown visibility
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false); 
 
   const handleIncrement = () => {
     setQuantity(quantity + 1);
