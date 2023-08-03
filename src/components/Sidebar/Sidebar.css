@@ -13,6 +13,11 @@
     padding: 0;
     margin: 0;
   }
+
+  .sidebar-top {
+    padding: 0;
+    margin: 0;
+  }
   
   .sidebar-bottom{
     margin-top: 12.9vh;
@@ -21,6 +26,7 @@
   .sidebar a {
     text-decoration: none;
     color: #ffffff;
+    padding: 0;
   }
   
   .sidebar-item {

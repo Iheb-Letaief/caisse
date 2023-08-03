@@ -75,7 +75,7 @@ const TableItem: React.FC<TableItemProps> = ({ label, price, initialQuantity = 0
 
   return (
     <>
-      <tr>
+      <tr className="window-table-item">
         <td className="quantity-cell">
           <button className="decrement-button" onClick={handleDecrement}>
             -
