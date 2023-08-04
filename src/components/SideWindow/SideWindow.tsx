@@ -71,7 +71,20 @@ const TableItem: React.FC<TableItemProps> = ({ label, price, initialQuantity = 0
     setIsDropdownOpen(!isDropdownOpen);
   };
 
-  //const nb_joueurs = 10;
+  const nb_joueurs10 = 10;
+  const nb_joueurs9 = 9;
+  const nb_joueurs11 = 11;
+  const nb_joueurs12 = 12;
+
+  const labelToNbJoueursMap: { [key: string]: number } = {
+    "FOOT HP 1H 9 pers": nb_joueurs9,
+    "FOOT HP 1H 10 pers": nb_joueurs10,
+    "FOOT HP 1H 11 pers": nb_joueurs11,
+    "FOOT HP 1H 12 pers": nb_joueurs12,
+  };
+
+  const nbJoueurs = labelToNbJoueursMap[label] || 0;
+
 
   return (
     <>
@@ -97,7 +110,7 @@ const TableItem: React.FC<TableItemProps> = ({ label, price, initialQuantity = 0
         <tr>
           <td colSpan={3} className="dropdown-container">
             <div className="players-container">
-              {Array.from({length: quantity}, (_, index) =>(
+              {Array.from({length: nbJoueurs}, (_, index) =>(
                 <PlayerCard key={index} name={'Joueur ' + (index+1)} price={9}/>
               ))}
             </div>
@@ -146,11 +159,11 @@ const SideWindow = () => {
                   </tr>
                 </thead>
                 <tbody>
+                  <TableItem label="FOOT HP 1H 11 pers" price={90}/>
+                  <TableItem label="FOOT HP 1H 9 pers" price={90}/>
+                  <TableItem label="FOOT HP 1H 12 pers" price={90}/>
                   <TableItem label="FOOT HP 1H 10 pers" price={90}/>
-                  <TableItem label="FOOT HP 1H 10 pers" price={90}/>
-                  <TableItem label="FOOT HP 1H 10 pers" price={90}/>
-                  <TableItem label="FOOT HP 1H 10 pers" price={90}/>
-                  <TableItem label="FOOT HP 1H 10 pers" price={90}/>
+                  <TableItem label="FOOT HP 1H 11 pers" price={90}/>
                 </tbody>
               </table>
 
