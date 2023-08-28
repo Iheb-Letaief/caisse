@@ -44,7 +44,7 @@ const Calculator: React.FC<CalculatorProps> = ({ onSoldeButtonClick, onResultCha
   
   return (
     <div className="calculator">
-      <div className="result-box">{result}</div>
+      <div className="result-box" data-testid="result-box">{result}</div>
       <div className="button-row">
         <button className="number-button" onClick={() => handleClick("7")}>
           7
@@ -55,7 +55,7 @@ const Calculator: React.FC<CalculatorProps> = ({ onSoldeButtonClick, onResultCha
         <button className="number-button" onClick={() => handleClick("9")}>
           9
         </button>
-        <button className="operation-button" onClick={() => handleClick("/")}>
+        <button className="operation-button" onClick={() => handleClick("/")} data-testid="operation-division">
           ÷
         </button>
       </div>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Sidebar.css";
 import { Link } from "react-router-dom";
-import * as Icons from "../../utils/Icons"; // Import all SVG icons from the icons.js file
+import * as Icons from "../../utils/Icons"; 
 
 const Sidebar: React.FC = () => {
   const [selectedItems, setSelectedItems] = useState<Array<number | null>>([null, null]);

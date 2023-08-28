@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./SideWindow.css";
 import { AttenteButton, AutreButton, CbButton, CloseButton, EncaisserButton, EspButton, RemiseButton } from "../Buttons/Buttons";
 import { PlayerCard } from "../Cards/Cards";
+import itemStore from "../../itemStore";
 
 
 interface TicketProps {
@@ -56,6 +57,7 @@ const TicketInfo: React.FC<TicketProps> = ({
 const TableItem: React.FC<TableItemProps> = ({ label, price, initialQuantity = 0 }) => {
   const [quantity, setQuantity] = useState(initialQuantity);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false); 
+  
 
   const handleIncrement = () => {
     setQuantity(quantity + 1);
@@ -177,8 +179,7 @@ const SideWindow = () => {
                 <div>TOTAL T.T.C</div>
                 <div>{ /*total*/ }90 $</div>
               </div>
-
-
+              
               <div className="btn-row1">
                 <EspButton/>
                 <CbButton/>

@@ -8,8 +8,6 @@ import FootHP from './pages/FootHP/FootHP';
 import Remise from './pages/Paiement&Remise/Remise';
 
 
-
-
 function App() {
   const [activity, setActivity] = useState("");
   const handleActivityChange = (value: string) => {
