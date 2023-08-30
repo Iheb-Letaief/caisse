@@ -55,7 +55,7 @@ const Sidebar: React.FC = () => {
                     }`}
                     onClick={() => handleItemClick(0, index)}
                   >
-                    <div className="sidebar-icon">{menuItem.icon}</div>
+                    <div className="sidebar-icon" data-testid="FutbolIcon">{menuItem.icon}</div>
                     <span className="sidebar-text">{menuItem.text}</span>
                   </div>
                 </a>
@@ -77,7 +77,7 @@ const Sidebar: React.FC = () => {
                     }`}
                     onClick={() => handleItemClick(1, index)}
                   >
-                    <div className="sidebar-icon">{menuItem.icon}</div>
+                    <div className="sidebar-icon" >{menuItem.icon}</div>
                     <span className="sidebar-text">{menuItem.text}</span>
                   </div>
                 </Link>
