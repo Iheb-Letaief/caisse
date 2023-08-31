@@ -1,4 +1,3 @@
-import React from "react";
 import { render, screen, fireEvent,waitFor } from "@testing-library/react";
 import SideWindow from "./SideWindow";
 
@@ -6,7 +5,6 @@ describe("SideWindow component", () => {
   it("renders the ticket information", () => {
     render(<SideWindow />);
 
-    // Test the presence of ticket information elements
     expect(screen.getByText("John Doe")).toBeInTheDocument();
     expect(screen.getByText("06.01.25.50.18")).toBeInTheDocument();
     expect(screen.getByText("13/07/2023")).toBeInTheDocument();
@@ -29,7 +27,6 @@ describe("SideWindow component", () => {
     const quantityDisplay = firstTableRow && firstTableRow.querySelector(".quantity");
 
     if (quantityDisplay) {
-      // Initial state: quantity is 0
       expect(quantityDisplay).toHaveTextContent("0");
 
       // Increment the quantity and check if it's displayed correctly
@@ -49,7 +46,6 @@ describe("SideWindow component", () => {
   it("opens and closes the dropdown", () => {
     render(<SideWindow />);
 
-    // Initial state: dropdowns are closed
     const closedArrowButtons = screen.getAllByText("▼");
     closedArrowButtons.forEach((button) => {
       expect(button).toBeInTheDocument();
@@ -69,6 +65,5 @@ describe("SideWindow component", () => {
     expect(closedArrowButtons[0]).toBeInTheDocument();
   });
 
-  // ... Add more test cases for other functionality
 
 });
